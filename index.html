@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Martina Hubáčková | Health & Relaxation Massage</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Raleway:wght@300;400&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <nav class="nav-links">
+          <input type="checkbox" id="menu-check" />
+          <label for="menu-check" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+          <ul>
+            <li><a href="#home">Domů</a></li>
+            <li><a href="#about">O mně</a></li>
+            <li><a href="#services">Nabídka služeb</a></li>
+            <li><a href="#pricing">Ceník</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="hero-bg"></div>
+
+      <div class="glass-panel">
+        <div class="hero-content">
+          <h1>
+            Martina <br />
+            Hubáčková
+          </h1>
+          <p>Zdravotní a&nbsp;relaxační masáže</p>
+          <a href="#book" class="btn-primary">Objednat se</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="nabidka" class="services-section">
+      <div class="container">
+        <div class="services-grid animate-on-scroll">
+          <a href="#bankovani" class="service-card">
+            <div class="service-icon">
+              <img src="banky.svg" alt="Baňkování" />
+            </div>
+            <h3>Baňkování</h3>
+            <p>
+              Baňkování je metoda, při které se na kůži přisají skleněné nádobky
+              pomocí podtlaku. Pomáhá uvolnit svaly a&nbsp;klouby, ale využívá
+              se i&nbsp;při problémech s&nbsp;trávením, dýcháním nebo pro
+              celkovou úlevu od potíží.
+            </p>
+            <span class="btn-more">Zjistěte více...</span>
+          </a>
+
+          <a href="#reflexni" class="service-card">
+            <div class="service-icon">
+              <img src="nohy.svg" alt="Reflexní terapie" />
+            </div>
+            <h3>Reflexní terapie</h3>
+            <p>
+              Reflexní terapie je přírodní léčebná metoda stará zhruba
+              5&nbsp;000 let. Využívá toho, že na chodidlech se nacházejí
+              nervová zakončení (reflexní plošky), která jsou propojena se všemi
+              orgány v&nbsp;těle.
+            </p>
+            <span class="btn-more">Zjistěte více...</span>
+          </a>
+
+          <a href="#lavove" class="service-card">
+            <div class="service-icon">
+              <img src="kameny.svg" alt="Lávové kameny" />
+            </div>
+            <h3>Lávové kameny</h3>
+            <p>
+              Masáž lávovými kameny využívá nahřáté čedičové kameny
+              k&nbsp;hloubkovému uvolnění svalů. Teplo z&nbsp;kamenů zlepšuje
+              krevní oběh, odbourává stres a&nbsp;pomáhá tělu celkově
+              regenerovat.
+            </p>
+            <span class="btn-more">Zjistěte více...</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+            }
+          });
+        },
+        { threshold: 0.2 },
+      );
+
+      document
+        .querySelectorAll(".animate-on-scroll")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
