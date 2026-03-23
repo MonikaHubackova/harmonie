@@ -165,15 +165,15 @@ body {
 
 .service-card {
   flex: 1;
-  background-color: #f7f7f7; /* Světle šedé pozadí */
+  background-color: #f8f6f1; /* Světle šedé pozadí */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   height: auto;
-  padding: 50px;
+  padding: 40px;
   border-radius: 30px 0 30px 0;
-  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.048);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
   text-decoration: none !important;
   color: inherit;
 }
@@ -246,7 +246,6 @@ body {
 }
 .animate-on-scroll.is-visible .service-card:hover {
   transform: translateY(-10px); /* Zvětšil jsem na 10px, aby to bylo vidět */
-  background-color: #f0f0f0;
 }
 
 .animate-on-scroll.is-visible .service-card {
@@ -265,7 +264,7 @@ body {
 /* --- RESPONZIVITA (MOBIL) --- */
 @media (max-width: 768px) {
   .services-grid {
-    flex-direction: column; /* Pod sebou na mobilu */
+    flex-direction: column;
     align-items: center;
     text-align: center;
   }
@@ -364,7 +363,9 @@ body {
   }
 
   .container {
-    width: 90%;
+    padding: 0 10px; /* Zmenšíme boční odsazení celého webu na mobilu */
+    width: 95%; /* Roztáhneme kontejner víc do krajů */
+
     text-align: center; /* Na mobilu obvykle vypadá lépe centrování */
   }
 
