@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body class="home">
     <header class="navbar">
       <div class="container">
         <nav class="nav-links">
@@ -24,11 +24,22 @@
           </label>
 
           <ul>
-            <li><a href="#home">Domů</a></li>
+            <li><a href="index.html">Domů</a></li>
             <li><a href="#about">O mně</a></li>
-            <li><a href="#services">Nabídka služeb</a></li>
-            <li><a href="#pricing">Ceník</a></li>
-            <li><a href="#contact">Kontakt</a></li>
+            <li class="dropdown-trigger">
+              <a href="#services">Nabídka služeb</a>
+              <ul class="dropdown-menu">
+                <li><a href="bankovani.html">Baňkování</a></li>
+                <li>
+                  <a href="reflexologie.html">Reflexologie plosky nohy</a>
+                </li>
+                <li><a href="lavove-kameny.html">Lávové kameny</a></li>
+              </ul>
+            </li>
+            <li><a href="cenik.html">Ceník</a></li>
+            <li>
+              <a href="objednani.html" class="btn-primary">Objednat se</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -43,7 +54,6 @@
             Hubáčková
           </h1>
           <p>Zdravotní a&nbsp;relaxační masáže</p>
-          <a href="#book" class="btn-primary">Objednat se</a>
         </div>
       </div>
     </section>

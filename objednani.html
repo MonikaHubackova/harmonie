@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objednání</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Raleway:wght@300;400&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <nav class="nav-links">
+          <input type="checkbox" id="menu-check" />
+          <label for="menu-check" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+          <ul>
+            <li><a href="index.html">Domů</a></li>
+            <li><a href="#about">O mně</a></li>
+            <li class="dropdown-trigger">
+              <a href="#services">Nabídka služeb</a>
+              <ul class="dropdown-menu">
+                <li><a href="bankovani.html">Baňkování</a></li>
+                <li><a href="#masaze">Masáže</a></li>
+                <li><a href="#reflexologie">Reflexologie</a></li>
+              </ul>
+            </li>
+            <li><a href="#pricing">Ceník</a></li>
+            <li><a href="#book" class="btn-primary">Objednat se</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section id="kontakt" class="contact-section">
+      <div class="container">
+        <div class="main-title">
+          <h1>Kontakt</h1>
+          <strong>Na masáž je nutné se předem objednat.</strong><br />
+          Využít můžete telefon, e-mail nebo kontaktní formulář.
+        </div>
+      </div>
+
+      <div class="contact-center-box">
+        <div class="contact-main-wrapper">
+          <div class="contact-text-column">
+            <div class="info-block">
+              <h2 class="accent-title">Martina Hubáčková</h2>
+              <p class="subtitle">Masérské, rekondiční a regenerační služby</p>
+              <div class="contact-item">
+                <img
+                  src="images/email.svg"
+                  alt="Email"
+                  class="contact-icon-img"
+                />
+                <span>mhubackova@seznam.cz</span>
+              </div>
+
+              <div class="contact-item">
+                <img
+                  src="images/tel.svg"
+                  alt="Telefon"
+                  class="contact-icon-img"
+                />
+                <span>+420 732 845 863</span>
+              </div>
+
+              <div class="contact-item">
+                <img
+                  src="images/loc.svg"
+                  alt="Adresa"
+                  class="contact-icon-img"
+                />
+                <span>Dostihová 1, Slušovice</span>
+              </div>
+            </div>
+
+            <div class="hours-block">
+              <h2 class="accent-title">Provozní hodiny</h2>
+              <div class="hours-list">
+                <div class="hour-row">
+                  <span>Úterý</span><span>16.00 – 20.00</span>
+                </div>
+                <div class="hour-row">
+                  <span>Pátek</span><span>16.00 – 20.00</span>
+                </div>
+                <div class="hour-row">
+                  <span>Sobota</span><span>16.00 – 20.00</span>
+                </div>
+              </div>
+              <p class="hour-note">V jiném čase dle domluvy.</p>
+            </div>
+          </div>
+
+          <div class="contact-map-column">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=..."
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="form-wrapper">
+      <div class="container">
+        <div class="main-title">
+          <h1>Napište mi zprávu</h1>
+        </div>
+
+        <form
+          action="https://formsubmit.co/mhubackova@seznam.cz"
+          method="POST"
+          class="contact-form"
+        >
+          <input type="text" name="_honey" style="display: none" />
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Jméno" required />
+            <input type="text" name="surname" placeholder="Příjmení" required />
+          </div>
+          <div class="form-row">
+            <input type="tel" name="phone" placeholder="Telefon" />
+            <input type="email" name="email" placeholder="E-mail" required />
+          </div>
+          <textarea
+            name="message"
+            placeholder="Vaše zpráva"
+            rows="5"
+          ></textarea>
+          <button type="submit" class="btn-submit">ODESLAT</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

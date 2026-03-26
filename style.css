@@ -24,6 +24,41 @@ body {
   height: 100%;
 }
 
+.main-title {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+}
+
+.main-title h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #1d2222;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.main-title p {
+  color: #1d2222;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.accent-title {
+  font-family: "Playfair Display", serif;
+  color: #ff715b;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  font-weight: 300;
+  margin-bottom: 25px;
+}
+
 /* -------------------
        HORNÍ MENU
    -------------------*/
@@ -33,7 +68,7 @@ body {
   left: 0;
   width: 100%;
   z-index: 100;
-  padding-top: 30px;
+  padding: 15px 0;
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.4) 0%,
@@ -41,18 +76,33 @@ body {
   );
 }
 
+body.subpage .navbar {
+  position: relative;
+  background: #6b4f3ba3;
+  padding: 15px 0;
+}
+
+body.subpage .navbar::before {
+  display: none;
+}
+
+body.subpage .nav-links a {
+  color: #ffffff;
+}
+
 .nav-links ul {
   display: flex;
   justify-content: flex-end;
   list-style: none;
   gap: 40px;
+  align-items: center;
 }
 
 .nav-links a {
   text-decoration: none;
   display: inline-block;
   color: #ffffff;
-  font-weight: 100;
+  font-weight: 300;
   font-size: 1rem;
   letter-spacing: 1px;
   transition: all 0.3s ease;
@@ -72,25 +122,88 @@ body {
 }
 
 /* -------------------
+      DROPDOWN MENU
+   -------------------*/
+
+/* Základní nastavení pro rodiče (li) */
+.dropdown-trigger {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  list-style: none;
+  padding: 10px 0;
+  min-width: 180px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: block !important; /* Přepisujeme flex z nav-links ul */
+}
+
+.dropdown-trigger:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(20px); /* Jemný dojezd dolů */
+}
+
+.dropdown-menu li a {
+  color: #ffffff;
+  padding: 12px 20px;
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.2s;
+}
+
+.dropdown-menu li:last-child a {
+  border-bottom: none;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: none; /* Zrušíme posun z hlavního menu */
+}
+
+/* Šipka (trojúhelník) nahoře */
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 20px; /* Pozice šipky - můžete upravit dle potřeby */
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgba(255, 255, 255, 0.15);
+}
+
+/* -------------------
         BUTTON
    -------------------*/
 .btn-primary {
   display: inline-block;
-  padding: 16px 40px;
-  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  background-color: rgba(255, 113, 91, 0.819);
   color: #ffffff;
   text-decoration: none;
   border-radius: 30px;
-  font-weight: 700;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  text-transform: uppercase;
-  border-right: 1px solid rgba(255, 255, 255, 1);
-  border-left: 1px solid rgba(255, 255, 255, 1);
+  /*border-right: 1px solid rgba(255, 255, 255, 1);
+  border-left: 1px solid rgba(255, 255, 255, 1);*/
 }
 
 .btn-primary:hover {
-  background-color: rgba(255, 113, 91, 0.4);
+  background-color: rgba(255, 113, 91, 0.925);
   transform: translateY(-2px);
 }
 
@@ -165,7 +278,7 @@ body {
 
 .service-card {
   flex: 1;
-  background-color: #f8f6f1; /* Světle šedé pozadí */
+  background-color: #f7f4f3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -186,7 +299,7 @@ body {
 }
 
 .service-icon img {
-  width: 80px; /* Uprav podle velikosti tvých ikon */
+  width: 80px;
   height: auto;
 }
 
@@ -217,7 +330,7 @@ body {
   font-weight: 500;
   text-decoration: none;
   font-size: 1.1rem;
-  position: relative; /* Nutné pro pozicování linky */
+  position: relative;
   display: inline-block;
   padding-bottom: 4px;
 }
@@ -236,6 +349,68 @@ body {
 
 .service-card:hover .btn-more::after {
   width: 100%;
+}
+
+/* -------------------
+      DETAIL SLUŽEB
+   -------------------*/
+
+.service-detail {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+
+.service-box {
+  display: flex;
+  background-color: #f8f6f1;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+.service-box.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-image {
+  flex: 1;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-content {
+  flex: 1;
+  padding: 40px;
+}
+
+.service-content li {
+  color: #1d2222;
+  line-height: 1.5;
+  margin: 5px;
+  margin-left: 30px;
+
+  font-weight: 300;
+}
+
+.service-image {
+  flex: 1;
+}
+
+.service-image img {
+  width: 100%;
+  border-radius: 30 30 0 0;
+  object-fit: cover;
+}
+
+/* BUTTON */
+.service-button {
+  text-align: center;
+  margin-top: 60px;
 }
 
 /* --- ANIMACE (SHORA DOLŮ) --- */
@@ -261,17 +436,184 @@ body {
   transition-delay: 0.4s;
 }
 
-/* --- RESPONZIVITA (MOBIL) --- */
-@media (max-width: 768px) {
-  .services-grid {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+/* -------------------
+        KONTAKT
+   -------------------*/
 
-  .service-card h3 {
-    min-height: 0;
-    margin-bottom: 10px;
+.contact-section {
+  padding: 80px 0 0 0;
+  background-color: #fff;
+  color: #1d2222;
+}
+
+.contact-center-box {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  margin-bottom: 80px;
+}
+
+.contact-main-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.contact-text-column {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  flex: 1;
+}
+
+.contact-icon-img {
+  width: 18px;
+  height: 18px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+  font-weight: 300;
+}
+
+.hours-list {
+  max-width: 280px;
+}
+
+.hour-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+
+.contact-map-column {
+  flex: 1.2;
+  height: 420px;
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+}
+
+.contact-map-column iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  border-radius: 30px;
+}
+
+.form-wrapper {
+  background-color: #f6f6f6;
+  display: flex;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.form-wrapper h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  margin-bottom: 50px;
+  font-weight: 400;
+}
+
+.contact-form {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  flex: 1;
+  padding: 18px 25px;
+  border: none;
+  border-radius: 15px;
+  background-color: #e9e2de;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.btn-submit {
+  background-color: #ff715b;
+  color: white;
+  border: none;
+  padding: 16px 70px;
+  border-radius: 35px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #ff8a7a;
+  transform: translateY(-2px);
+}
+
+/* -------------------
+        CENIK
+   -------------------*/
+
+.pricing-section {
+  padding: 40px 0 80px;
+  background-color: #ffffff; /* Bílé pozadí dle obrázku */
+}
+
+.pricing-list {
+  max-width: 600px; /* Omezíme šířku, aby tabulka nebyla příliš roztažená */
+  margin: 0 auto;
+}
+
+.pricing-item {
+  display: flex;
+  align-items: baseline; /* Zarovná text na linku */
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* Tečkovaná čára mezi názvem a cenou */
+.pricing-item::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px dotted #ccc;
+  margin: 0 15px;
+  order: 2;
+}
+
+.service-name {
+  order: 1;
+  color: #1d2222;
+  font-weight: 300;
+}
+
+.price {
+  order: 3;
+  color: #1d2222;
+  font-weight: 400;
+  white-space: nowrap; /* Zabrání zalomení ceny */
+}
+
+/* Úprava pro mobilní telefony */
+@media (max-width: 600px) {
+  .pricing-item {
+    font-size: 1rem;
   }
 }
 
@@ -375,5 +717,49 @@ body {
 
   header {
     padding: 20px;
+  }
+
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-card h3 {
+    min-height: 0;
+    margin-bottom: 10px;
+  }
+
+  .service-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .service-box {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .service-box.reverse {
+    flex-direction: column;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+
+  .contact-header h1,
+  .form-wrapper h2 {
+    font-size: 2.5rem;
+  }
+  .contact-main-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-map-column {
+    width: 100%;
+    height: 400px;
+  }
+  .contact-map-column iframe {
+    height: 400px;
   }
 }
