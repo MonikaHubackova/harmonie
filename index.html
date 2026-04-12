@@ -74,6 +74,10 @@
             <span class="btn-more">Zjistěte více...</span>
           </a>
         </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
         <div class="about-intro">
           <div class="about-image-wrapper">
             <img src="images/foto2.png" alt="Martina" class="main-portrait" />
@@ -99,7 +103,85 @@
         </div>
       </div>
     </section>
-    <div id="footer-placeholder"></div>
+    <section>
+      <div class="form-wrapper">
+        <div class="container">
+          <div class="main-title">
+            <h1>Napište mi zprávu</h1>
+          </div>
+
+          <form
+            action="https://formsubmit.co/mhubackova@seznam.cz"
+            method="POST"
+            class="contact-form"
+          >
+            <input type="text" name="_honey" style="display: none" />
+            <div class="form-row">
+              <input type="text" name="name" placeholder="Jméno" required />
+              <input
+                type="text"
+                name="surname"
+                placeholder="Příjmení"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <input type="tel" name="phone" placeholder="Telefon" />
+              <input type="email" name="email" placeholder="E-mail" required />
+            </div>
+            <textarea
+              name="message"
+              placeholder="Vaše zpráva"
+              rows="5"
+            ></textarea>
+            <button type="submit" class="btn-submit">ODESLAT</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="photo-carousel-full">
+      <div class="carousel-viewport" id="viewport">
+        <div class="carousel-track-infinite" id="carouselTrack">
+          <img
+            src="images/gal01.jpg"
+            alt="Masáž 1"
+            class="carousel-img"
+            onclick="openLightbox(this.src)"
+          />
+          <img
+            src="images/gal02.jpg"
+            alt="Masáž 2"
+            class="carousel-img"
+            onclick="openLightbox(this.src)"
+          />
+          <img
+            src="images/gal03.jpg"
+            alt="Masáž 3"
+            class="carousel-img"
+            onclick="openLightbox(this.src)"
+          />
+          <img
+            src="images/gal04.jpg"
+            alt="Masáž 4"
+            class="carousel-img"
+            onclick="openLightbox(this.src)"
+          />
+          <img
+            src="images/gal05.jpg"
+            alt="Masáž 5"
+            class="carousel-img"
+            onclick="openLightbox(this.src)"
+          />
+        </div>
+      </div>
+    </section>
+
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <span class="nav-btn prev">&#10094;</span>
+      <span class="nav-btn next">&#10095;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+    </div>
 
     <script>
       const observer = new IntersectionObserver(

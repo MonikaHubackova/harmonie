@@ -179,6 +179,7 @@ body.subpage .dropdown-menu li a {
   transition: var(--transition);
   box-shadow: var(--shadow);
   z-index: 1000;
+  display: block !important;
   box-shadow: none;
 }
 
@@ -782,13 +783,59 @@ body.subpage .dropdown-menu li a {
 }
 
 /* -------------------
+   KOLOTOC GALERIE
+-------------------*/
+.photo-carousel-full {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0; /* Odstraní drobné mezery pod obrázky */
+  cursor: grab; /* Změna kurzoru na ruku */
+}
+
+.photo-carousel-full:active {
+  cursor: grabbing; /* Při kliknutí se ruka sevře */
+}
+.carousel-track-container {
+  display: flex;
+  width: 100%;
+}
+
+.carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track-infinite {
+  display: flex;
+  width: max-content; /* Důležité pro řazení vedle sebe */
+}
+
+/* Zastavení při najetí myší */
+.carousel-track-infinite:hover {
+  animation-play-state: paused;
+}
+
+.carousel-img {
+  height: 250px; /* Nastavte si libovolnou výšku */
+  width: auto;
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  user-select: none; /* Zabraní nechtěnému kopírování obrázku při tažení */
+  -webkit-user-drag: none; /* Zabránění nativnímu drag & drop obrázků */
+}
+
+.carousel-img:hover {
+  opacity: 0.8;
+}
+
+/* -------------------
         PATIČKA
 -------------------*/
 
 .footer {
   background-color: #9b8b80; /* hnědá z návrhu */
   color: #ffffff;
-  margin-top: 80px;
   flex-shrink: 0;
 }
 
@@ -1021,6 +1068,9 @@ body.subpage .dropdown-menu li a {
   }
   .about-text h2 {
     font-size: 2.5rem;
+  }
+  .carousel-slide {
+    min-width: 100%; /* Na mobilu jen jedna fotka */
   }
 }
 
