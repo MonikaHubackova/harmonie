@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="cs">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,37 +13,8 @@
     />
   </head>
   <body class="home">
-    <header class="navbar">
-      <div class="container">
-        <nav class="nav-links">
-          <input type="checkbox" id="menu-check" />
-          <label for="menu-check" class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
+    <div id="header-placeholder"></div>
 
-          <ul>
-            <li><a href="index.html">Domů</a></li>
-            <li><a href="#about">O mně</a></li>
-            <li class="dropdown-trigger">
-              <a href="#services">Nabídka služeb</a>
-              <ul class="dropdown-menu">
-                <li><a href="bankovani.html">Baňkování</a></li>
-                <li>
-                  <a href="reflexologie.html">Reflexologie plosky nohy</a>
-                </li>
-                <li><a href="lavove-kameny.html">Lávové kameny</a></li>
-              </ul>
-            </li>
-            <li><a href="cenik.html">Ceník</a></li>
-            <li>
-              <a href="objednani.html" class="btn-primary">Objednat se</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
     <section class="hero">
       <div class="hero-bg"></div>
 
@@ -103,8 +74,33 @@
             <span class="btn-more">Zjistěte více...</span>
           </a>
         </div>
+        <div class="about-intro">
+          <div class="about-image-wrapper">
+            <img src="images/foto2.png" alt="Martina" class="main-portrait" />
+          </div>
+          <div class="about-text">
+            <div class="about-title">
+              <h1>Těší mě!</h1>
+            </div>
+
+            <p>
+              Ráda bych se představila. Jmenuji se Martina. Stejně jako mnoho
+              z&nbsp; vás si jistě prošlo nebo prochází určitými životními
+              změnami, krizemi i&nbsp;já jsem hledala cestu pro své vlastní
+              Uzdravení a&nbsp;Rovnováhu v&nbsp;Životě.
+            </p>
+            <p>
+              Pochopila jsem, že Život, jeho prožívání a&nbsp;štěstí je
+              především v&nbsp; mém vnitřním nastavení Mysli
+              a&nbsp;v&nbsp;přístupu k Životu...
+            </p>
+            <a href="o-mne.html" class="btn-primary">Číst dále</a>
+          </div>
+        </div>
       </div>
     </section>
+    <div id="footer-placeholder"></div>
+
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
@@ -121,5 +117,7 @@
         .querySelectorAll(".animate-on-scroll")
         .forEach((el) => observer.observe(el));
     </script>
+    <div id="footer-placeholder"></div>
+    <script src="main.js"></script>
   </body>
 </html>
